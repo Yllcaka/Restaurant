@@ -27,15 +27,17 @@ const Header = (() => {
     let logoImgDOM = document.createElement('img');
     let navDOM = document.createElement('nav');
     let ulNavDOM = document.createElement('ul');
-    let navItems = ['home', 'menu', 'about', 'contact'];
-    navItems.forEach(navItem => {
+    let navItems = ['home', 'menu', 'contact'];
+    navItems.forEach((navItem, index) => {
         let liDOM = document.createElement('li');
         let linkDOM = document.createElement('a');
+        linkDOM.setAttribute('href', "");
         linkDOM.classList.add('nav-item');
         linkDOM.text = navItem.toUpperCase();
         linkDOM.setAttribute('id', navItem);
         liDOM.appendChild(linkDOM);
         ulNavDOM.appendChild(liDOM);
+        navItems[index] = linkDOM;
     });
     logoImgDOM.setAttribute('src', 'images/logo.png');
     logoDOM.appendChild(logoImgDOM);
@@ -45,7 +47,7 @@ const Header = (() => {
     headerDOM.appendChild(logoDOM);
     headerDOM.appendChild(navDOM);
 
-    return { headerDOM }
+    return { headerDOM, navItems }
 })();
 
 
