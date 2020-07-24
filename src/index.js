@@ -3,25 +3,40 @@ import { Home } from './home';
 import { Footer } from "./footer";
 import { Contact } from './contact';
 import { Menu } from './menu'
-// const header = Header();
-var body = document.querySelector('body');
-var mainContent = document.createElement('content');
 
-var itemLists = [Home.homePageDOM, Menu.menuPageDOM, Contact.contactDivDOM];
+const Main = (() => {
+    let body = document.querySelector('body');
+    let mainContent = document.createElement('content');
 
-Header.navItems.forEach((item, index) => {
-    item.addEventListener('click', (e) => {
-        event.preventDefault();
-        mainContent.innerHTML = "";
-        mainContent.appendChild(itemLists[index]);
-    });
-});
+    let itemLists = [Home.build(), Menu.build(), Contact.build()];
 
-mainContent.appendChild(Home.homePageDOM);
+    const init = () => {
 
-body.appendChild(Header.headerDOM);
-body.appendChild(mainContent);
-body.appendChild(Footer.footerDOM);
+
+        Header.navItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                event.preventDefault();
+                let activateDOM = document.querySelector('.active');
+                activateDOM.classList.remove('active');
+
+                event.preventDefault();
+                console.log(Header.navItems);
+                item.classList.add('active');
+                mainContent.innerHTML = "";
+                mainContent.appendChild(itemLists[index]);
+            });
+        });
+
+        mainContent.appendChild(Home.build());
+        Header.navItems[0].classList.add('active');
+        body.appendChild(Header.build());
+        body.appendChild(mainContent);
+        body.appendChild(Footer.build());
+    }
+    return { init }
+})();
+
+Main.init();
 // mainContent.appendChild(Contact.contactDivDOM);
 // mainContent.appendChild(Footer.footerDOM);
 // console.log(Header.navItems);

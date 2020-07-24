@@ -1,26 +1,3 @@
-{/* <header>
-            <a href="" class="logo">
-                <img src="images/logo.png" alt="Restaurant">
-            </a>
-            <nav>
-                <ul>
-                    <li>
-                        <a class="nav-item active" href="" id="home">HOME</a>
-                    </li>
-                    <li>
-                        <a class="nav-item" href="" id="menu">MENU</a>
-                    </li>
-                    <li>
-                        <a class="nav-item" href="" id="about">ABOUT</a>
-                    </li>
-                    <li>
-                        <a class="nav-item" href="" id="contact">CONTACT</a>
-                    </li>
-                </ul>
-            </nav>
-        </header> */}
-
-
 const Header = (() => {
     let headerDOM = document.createElement('header');
     let logoDOM = document.createElement('a');
@@ -46,8 +23,8 @@ const Header = (() => {
 
     headerDOM.appendChild(logoDOM);
     headerDOM.appendChild(navDOM);
-
-    return { headerDOM, navItems }
+    const build = () => headerDOM;
+    return { build, navItems }
 })();
 
 

@@ -1,46 +1,3 @@
-{/* <footer id="footer">
-
-            <div class="footer-container">
-                <div>
-                    <h2>Contact Us</h2>
-                    <ul>
-                        <li>Lorem ipsum dolor sit</li>
-                        <li>Lorem ipsum dolor sit</li>
-                        <li>Lorem ipsum dolor sit</li>
-                        <li>Lorem ipsum dolor sit</li>
-                    </ul>
-
-                </div>
-                <div>
-                    <h2>About Us</h2>
-                    <ul>
-                        <li>Lorem ipsum dolor sit</li>
-                        <li>Lorem ipsum dolor sit</li>
-                        <li>Lorem ipsum dolor sit</li>
-                        <li>Lorem ipsum dolor sit</li>
-                    </ul>
-                </div>
-                <div>
-                    <h2>Contact Us</h2>
-                    <ul>
-                        <li>Lorem ipsum dolor sit</li>
-                        <li>Lorem ipsum dolor sit</li>
-                        <li>Lorem ipsum dolor sit</li>
-                        <li>Lorem ipsum dolor sit</li>
-                    </ul>
-                </div>
-                <div>
-                    <h2>More From Us</h2>
-                    <ul>
-                        <li>Lorem ipsum dolor sit</li>
-                        <li>Lorem ipsum dolor sit</li>
-                        <li>Lorem ipsum dolor sit</li>
-                        <li>Lorem ipsum dolor sit</li>
-                    </ul>
-                </div>
-            </div>
-        </footer> */}
-
 const Footer = (() => {
     let footerDOM = document.createElement('footer');
     let footerContainerDOM = document.createElement('div');
@@ -62,7 +19,8 @@ const Footer = (() => {
     footerContainerDOM.setAttribute('class', 'footer-container');
     footerDOM.appendChild(footerContainerDOM);
     footerDOM.setAttribute('id', 'footer');
-    return { footerDOM }
+    const build = () => footerDOM;
+    return { build }
 
 })();
 

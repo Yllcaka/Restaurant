@@ -1,17 +1,3 @@
-{/* <div id="home-page">
-<div class="home-page-content">
-    <div>
-        <h1>
-            Pizza Restaurant
-        </h1>
-        <p>A Restaurant only about Pizza's.</p>
-        <p>Our primary goal is to make the best Pizza’s you ever eaten</p>
-    </div>
-    <img src="images/pizza.png" alt="">
-</div>
-
-
-</div> */}
 const Home = (() => {
     let homePageDOM = document.createElement('div');
     let homePageContentDOM = document.createElement('div');
@@ -39,7 +25,8 @@ const Home = (() => {
     pizzaImgDOM.setAttribute('src', 'images/pizza.png');
     homePageContentDOM.appendChild(pizzaImgDOM);
     homePageDOM.id = 'home-page';
-    return { homePageDOM }
+    const build = () => homePageDOM;
+    return { build }
 
 })();
 

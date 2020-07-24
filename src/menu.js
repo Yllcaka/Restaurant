@@ -1,4 +1,3 @@
-
 const Menu = (() => {
     let menuPageDOM = document.createElement('div'); //id="menu-page"
     let menuDOM = document.createElement('div'); //<div class="menu">
@@ -38,7 +37,8 @@ const Menu = (() => {
     menuPageDOM.id = 'menu-page';
     menuPageDOM.appendChild(menuDOM);
 
-    return { menuPageDOM }
+    const build = () => menuPageDOM;
+    return { build }
 
 })();
 

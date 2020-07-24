@@ -1,31 +1,3 @@
-{/* <div id="contact">
-<h2>Contact Us</h2>
-<form>
-    <div>
-        <label for="name">Name: </label>
-        <input type="text" name="name" id="name">
-    </div>
-
-    <div>
-        <label for="lastName">Last Name: </label>
-        <input type="text" name="lastName" id="lastName">
-    </div>
-
-    <div>
-        <label for="email">E-mail: </label>
-        <input type="email" name="email" id="email">
-    </div>
-
-    <div>
-        <label for="phoneNumber">Phone Number: </label>
-        <input type="tel" name="phoneNumber" id="phoneNumber">
-    </div>
-
-    <button>Contact Us</button>
-
-</form>
-</div> */}
-
 const Contact = (() => {
     let contactDivDOM = document.createElement('div');
     let formDOM = document.createElement('form');
@@ -52,7 +24,8 @@ const Contact = (() => {
     contactDivDOM.id = 'contact-page';
     contactDivDOM.appendChild(h2DOM);
     contactDivDOM.appendChild(formDOM);
-    return { contactDivDOM }
+    const build = () => contactDivDOM;
+    return { build }
 })();
 
 export { Contact }
